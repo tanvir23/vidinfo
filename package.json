@@ -1,0 +1,27 @@
+{
+  "name": "vidinfo",
+  "version": "1.0.0",
+  "description": "A very simple electron app",
+  "main": "index.js",
+  "scripts": {
+    "electron": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanvir23/vidinfo.git"
+  },
+  "keywords": [
+    "electron",
+    "javascript",
+    "nodejs"
+  ],
+  "author": "tanvir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tanvir23/vidinfo/issues"
+  },
+  "homepage": "https://github.com/tanvir23/vidinfo#readme",
+  "dependencies": {
+    "electron": "2.0.5"
+  }
+}
