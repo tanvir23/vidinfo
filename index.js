@@ -1,7 +1,16 @@
 const electron = require('electron');
+const ffmpeg = require('fluent-ffmpeg');
 
-const { app } = electron;
+const { app, BrowserWindow, ipcMain } = electron;
 
+let mainWindow;
 app.on('ready', () => {
-    console.log('app is ready');
+    mainWindow = new BrowserWindow({});
+    mainWindow.loadURL(`file://${__dirname}/index.html`);
+});
+
+ipcMain.on('videoSubmit', (event, path) => {
+    ffmpeg.ffprobe(path, (err, metadata) => {
+        mainWindow.webContents.send('videoMetadata', metadata.format.duration);
+    })
 });
